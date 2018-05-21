@@ -4,8 +4,17 @@
              xmlns:local="clr-namespace:ApiRestXamarin"
              x:Class="ApiRestXamarin.MainPage">
 
-	<Label Text="Welcome to Xamarin.Forms!" 
-           VerticalOptions="Center" 
-           HorizontalOptions="Center" />
+    <StackLayout>
+        <Button
+          Text="Cargar datos"
+          Clicked="ClickListData"/>
+        <ListView x:Name="listViewUsers">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <TextCell Text="{Binding Name}" TextColor="Black"/>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </StackLayout>
 
 </ContentPage>
