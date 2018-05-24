@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ApiRestXamarin.UpdatePage">
+
+    <StackLayout Padding="10, 20, 10, 0">
+        <Label x:Name="labelNameUser"
+            Text="{Binding Id}" 
+            HorizontalOptions="CenterAndExpand" />
+        <Entry
+            x:Name="entryNameUserUpdate"
+            Placeholder="Ingresar usuario"
+            Text="{Binding Name}"/>
+        <Button
+            Text="Actualizar usuario"
+            Clicked="UpdateUser"
+            Margin="0, 20, 0, 0"/>
+    </StackLayout>
+    
+</ContentPage>

@@ -4,14 +4,26 @@
              xmlns:local="clr-namespace:ApiRestXamarin"
              x:Class="ApiRestXamarin.MainPage">
 
-    <StackLayout>
+    <StackLayout Padding="10, 20, 10 ,0">
+        <Entry
+            x:Name="entryNameUser"
+            Placeholder="Ingresar usuario"/>
         <Button
-          Text="Cargar datos"
-          Clicked="ClickListData"/>
+            Text="Crear nuevo usuario"
+            Clicked="ClickCreateUser"/>
         <ListView x:Name="listViewUsers">
             <ListView.ItemTemplate>
                 <DataTemplate>
-                    <TextCell Text="{Binding Name}" TextColor="Black"/>
+                    <ViewCell>
+                        <ViewCell.ContextActions>
+                            <MenuItem Clicked="ClickUpdateUser" CommandParameter="{Binding .}" Text="Actualizar" />
+                            <MenuItem Clicked="ClickDeleteUser" CommandParameter="{Binding Id}" Text="Eliminar" IsDestructive="True" />
+                        </ViewCell.ContextActions>
+                        <StackLayout Padding="15,0">
+                            <Label Text="{Binding Id}" />
+                            <Label Text="{Binding Name}" />
+                        </StackLayout>
+                    </ViewCell>
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>

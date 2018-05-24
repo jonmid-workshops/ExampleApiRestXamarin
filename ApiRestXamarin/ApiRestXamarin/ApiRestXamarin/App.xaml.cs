@@ -13,7 +13,8 @@ namespace ApiRestXamarin
 		{
 			InitializeComponent();
 
-			MainPage = new ApiRestXamarin.MainPage();
+            //MainPage = new ApiRestXamarin.MainPage();
+            MainPage = new NavigationPage(new MainPage());
 		}
 
 		protected override void OnStart ()

@@ -4,8 +4,9 @@ using System.Text;
 
 namespace ApiRestXamarin.Model
 {
-    class User
+    public class User
     {
+        public int Id { get; set; }
         public string Name { get; set; }
     }
 }
